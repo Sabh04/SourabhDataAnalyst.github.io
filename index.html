@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sourabh Pawar | AI Developer</title>
-<meta name="description" content="Sourabh Pawar builds website chatbots, desktop software, and data dashboards for businesses. Bookings and leads that actually reach you.">
+<meta name="description" content="Sourabh Pawar builds website chatbots and desktop software for businesses. Bookings and leads that actually reach you.">
 <style>
 *{box-sizing:border-box}
 :root{--bg:#0b1020;--card:#121a30;--card2:#182244;--text:#eef2ff;--muted:#aab4d0;--cyan:#22d3ee;--violet:#8b5cf6;--green:#34d399;--amber:#fbbf24}
@@ -82,14 +82,14 @@ footer{color:var(--muted);text-align:center;padding:40px 20px;border-top:1px sol
 <div>
 <span class="pill">AI Developer</span>
 <h1>Bookings and leads that <em>actually reach you.</em></h1>
-<p class="lead">I build website chatbots, desktop software, and data dashboards. No login to maintain. No database to babysit. No server for the owner to worry about. Just answers, bookings, and leads sent straight to you.</p>
+<p class="lead">I build website chatbots and desktop software. No login to maintain. No database to babysit. No server for the owner to worry about. Just answers, bookings, and leads sent straight to you.</p>
 <div class="btnrow">
 <a class="btn btn-primary" href="https://eclectic-clafoutis-57d439.netlify.app" target="_blank" rel="noopener">Try the live chatbot demo</a>
 <a class="btn btn-ghost" href="#projects">See all projects</a>
 </div>
 <div class="stats">
-<div class="stat"><b><span class="count" data-target="7">0</span></b><span>Projects built</span></div>
-<div class="stat"><b><span class="count" data-target="3">0</span></b><span>New AI and software projects</span></div>
+<div class="stat"><b><span class="count" data-target="3">0</span></b><span>Projects built</span></div>
+<div class="stat"><b><span class="count" data-target="3">0</span></b><span>Business types in the chatbot demo</span></div>
 <div class="stat"><b>24/7</b><span>After hours lead capture</span></div>
 </div>
 <p class="small">Focus: dental, med spa, chiropractic, salon, and restaurant businesses first.</p>
@@ -113,7 +113,6 @@ footer{color:var(--muted);text-align:center;padding:40px 20px;border-top:1px sol
 <button class="filter active" onclick="setFilter('all',this)">All</button>
 <button class="filter" onclick="setFilter('chatbot',this)">AI chatbots</button>
 <button class="filter" onclick="setFilter('desktop',this)">Desktop software</button>
-<button class="filter" onclick="setFilter('data',this)">Data</button>
 </div>
 <div class="grid" id="grid"></div>
 <p class="small">Note: The chatbot demo businesses are fictional portfolio demos, built to show the product. They are not real clients.</p>
@@ -138,7 +137,7 @@ footer{color:var(--muted);text-align:center;padding:40px 20px;border-top:1px sol
 <section id="skills">
 <h2>Skills</h2>
 <div class="skills">
-<span class="skill">Chatbot Development</span><span class="skill">AI Chatbot</span><span class="skill">Lead Generation</span><span class="skill">JavaScript</span><span class="skill">HTML</span><span class="skill">Python</span><span class="skill">tkinter</span><span class="skill">PyMuPDF</span><span class="skill">SQLite</span><span class="skill">SQL</span><span class="skill">Excel</span><span class="skill">Tableau</span><span class="skill">Power BI</span><span class="skill">Booking Automation</span>
+<span class="skill">Chatbot Development</span><span class="skill">AI Chatbot</span><span class="skill">Lead Generation</span><span class="skill">JavaScript</span><span class="skill">HTML</span><span class="skill">Python</span><span class="skill">tkinter</span><span class="skill">PyMuPDF</span><span class="skill">SQLite</span><span class="skill">Booking Automation</span>
 </div>
 </section>
 
@@ -160,7 +159,6 @@ footer{color:var(--muted);text-align:center;padding:40px 20px;border-top:1px sol
 <footer>
 <p>Sourabh Pawar | AI Developer</p>
 <p class="small">Built with JavaScript, HTML, and Python. Chatbot demo: Chatbot for Businesses.</p>
-<p class="small">Earlier work: <a href="data-analyst.html">Data Analyst Portfolio</a></p>
 </footer>
 
 <script>
@@ -168,10 +166,6 @@ const projects=[
 {cat:'chatbot',tag:'AI chatbot',title:'Chatbot for Businesses',short:'A website chatbot that sends bookings to the owner, not just into the chat.',body:'<p>One reusable engine, set up by config only, for dental, salon, and restaurant businesses.</p><ul><li>Answers from owner approved prices only, never guesses</li><li>Booking checked against real hours and closed days</li><li>After hours callback capture</li><li>Urgent requests flagged first</li><li>Every lead sent by WhatsApp and email, plus copy and CSV</li><li>Unanswered question log for the owner</li></ul><p><a href="https://eclectic-clafoutis-57d439.netlify.app" target="_blank" rel="noopener">Open the live demo</a></p><p class="small">Demo businesses are fictional portfolio examples.</p>',tech:'JavaScript, HTML'},
 {cat:'desktop',tag:'Desktop software',title:'Samarth Realty Desk',short:'A Windows desktop app for a real estate office on one shared PC.',body:'<p>Built for a real estate office, with a branded maroon and gold theme.</p><ul><li>PIN login per staff member, with owner and staff roles</li><li>Shared leads and properties database</li><li>Follow up reminders and dashboard</li><li>WhatsApp follow up links</li><li>Full activity log, with who did what and when</li><li>Closed deals tracking for leads and sold properties</li></ul><p class="small">39 of 39 tests plus a GUI smoke test passed.</p>',tech:'Python, tkinter, SQLite'},
 {cat:'desktop',tag:'Desktop software',title:'LogoRemover',short:'A desktop tool that batch cleans logos and headers from PDF files.',body:'<p>Built for batch PDF cleaning, with safety first.</p><ul><li>Originals are never changed in place</li><li>Cleaned copies go to a separate folder</li><li>Any file that would lose other text is reverted to the original</li><li>Simple folder picker, progress bar, and log</li></ul><p class="small">16 of 16 unit tests passed. Windows and Mac builds.</p>',tech:'Python, PyMuPDF'},
-{cat:'data',tag:'Data',title:'SQL Data Cleaning',short:'Cleaned a raw global company layoffs dataset with SQL.',body:'<p>Handled duplicates, missing values, and inconsistent formatting for industries, locations, and dates, and prepared reliable data on total and percent laid off, funding, and timelines.</p>',tech:'SQL'},
-{cat:'data',tag:'Data',title:'Data Cleaning in Excel',short:'Explored what drives bike purchases, with an interactive dashboard.',body:'<p>Cleaned customer data in Excel, ran exploratory analysis, and built an interactive dashboard to explore purchasing patterns across customer segments.</p>',tech:'Excel'},
-{cat:'data',tag:'Data',title:'Tableau Dashboard Project',short:'Explored the Seattle Airbnb market with real listing data.',body:'<p>An interactive Tableau dashboard visualizes pricing, occupancy, reviews, and host performance, for market analysis and tourism insights.</p>',tech:'Tableau'},
-{cat:'data',tag:'Data',title:'Power BI Dashboard Analysis',short:'Analyzed a survey of 630 plus data professionals.',body:'<p>Explored job satisfaction, salaries, career switches, work life balance, and programming preferences, with an interactive Power BI dashboard by role and industry.</p>',tech:'Power BI'}
 ];
 function render(filter){
   const grid=document.getElementById('grid');grid.innerHTML='';
@@ -188,7 +182,7 @@ function ask(q){
   const msgs=document.getElementById('msgs');
   msgs.innerHTML+='<div class="msg user">'+q+'</div>';
   let a='';
-  if(q.includes('build')) a='I build website chatbots for businesses, plus desktop software and data dashboards. The chatbot answers questions, books appointments, and sends every lead to the owner by WhatsApp and email.';
+  if(q.includes('build')) a='I build website chatbots for businesses, plus desktop software. The chatbot answers questions, books appointments, and sends every lead to the owner by WhatsApp and email.';
   else if(q.includes('Book')) a='In the full demo, I would check your hours and closed days, then ask for a date, time, and phone number. If the day is closed, I would offer the next open day instead of taking a bad booking.';
   else a='After hours, I do not pretend the business is open. I take a callback request with a name and phone number, flag urgent requests first, and send it to the owner right away.';
   setTimeout(()=>{msgs.innerHTML+='<div class="msg bot">'+a+'</div>';msgs.scrollTop=msgs.scrollHeight;},400);
