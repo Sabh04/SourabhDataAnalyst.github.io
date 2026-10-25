@@ -1,197 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sourabh Pawar | AI Developer</title>
-<meta name="description" content="Sourabh Pawar builds website chatbots and desktop software for businesses. Bookings and leads that actually reach you.">
-<style>
-*{box-sizing:border-box}
-:root{--bg:#0b1020;--card:#121a30;--card2:#182244;--text:#eef2ff;--muted:#aab4d0;--cyan:#22d3ee;--violet:#8b5cf6;--green:#34d399;--amber:#fbbf24}
-body{margin:0;background:radial-gradient(900px 500px at 15% 0%,rgba(139,92,246,.28),transparent 60%),radial-gradient(800px 500px at 90% 20%,rgba(34,211,238,.20),transparent 60%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.1)}
-nav{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.logo{font-weight:800;letter-spacing:.3px}
-.logo span{color:var(--cyan)}
-nav a.navlink{color:var(--muted);margin-left:16px;font-size:15px}
-nav a.navlink:hover{color:#fff}
-main{max-width:1100px;margin:0 auto;padding:20px}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start;padding:48px 0 24px}
-@media(max-width:800px){.hero{grid-template-columns:1fr}}
-.pill{display:inline-block;padding:6px 12px;border:1px solid rgba(34,211,238,.5);border-radius:999px;color:var(--cyan);font-size:13px;font-weight:700;background:rgba(34,211,238,.08)}
-h1{font-size:52px;line-height:1.05;margin:16px 0 12px}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-h2{font-size:30px;margin:44px 0 8px}
-h3{margin:8px 0}
-.lead{color:var(--muted);font-size:19px;max-width:640px}
-.btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
-.btn-primary{background:linear-gradient(90deg,var(--cyan),var(--violet));color:#fff}
-.btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.25)}
-.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
-.stat{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px}
-.stat b{font-size:30px;display:block}
-.stat span{color:var(--muted);font-size:14px}
-.chatbox{background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
-.chathead{display:flex;justify-content:space-between;align-items:center}
-.dot{width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px}
-.msgs{min-height:180px;margin:14px 0}
-.msg{padding:10px 12px;border-radius:14px;margin:8px 0;max-width:92%;font-size:15px}
-.bot{background:var(--card2);border:1px solid rgba(255,255,255,.1)}
-.user{background:rgba(34,211,238,.18);border:1px solid rgba(34,211,238,.4);margin-left:auto;text-align:right}
-.chipbtn{background:#1e2a4d;color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 12px;margin:4px 4px 0 0;cursor:pointer}
-.chipbtn:hover{border-color:var(--cyan)}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
-.filter{padding:9px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--text);cursor:pointer;font-weight:600}
-.filter.active{background:var(--cyan);color:#06121a;border-color:var(--cyan)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.grid{grid-template-columns:1fr}h1{font-size:38px}}
-.card{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:20px;cursor:pointer;transition:transform .15s,border-color .15s}
-.card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.6)}
-.tag{font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--cyan)}
-.card p{color:var(--muted);font-size:15px}
-.meta{font-size:13px;color:var(--muted)}
-.skills{display:flex;flex-wrap:wrap;gap:8px}
-.skill{padding:7px 11px;background:#1e2a4d;border-radius:999px;font-size:14px}
-.pricegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:800px){.pricegrid{grid-template-columns:1fr}}
-.price{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px}
-.price.featured{border-color:var(--violet);box-shadow:0 0 0 1px var(--violet)}
-.price b{font-size:32px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:800px){.steps{grid-template-columns:1fr}}
-.step{background:var(--card);border-radius:16px;padding:20px;border:1px solid rgba(255,255,255,.1)}
-.modalbg{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
-.modalbg.open{display:flex}
-.modal{background:#121a30;border:1px solid rgba(255,255,255,.15);border-radius:20px;max-width:640px;width:100%;padding:26px;max-height:90vh;overflow:auto}
-.closebtn{float:right;background:#1e2a4d;color:#fff;border:0;border-radius:10px;padding:8px 12px;cursor:pointer}
-footer{color:var(--muted);text-align:center;padding:40px 20px;border-top:1px solid rgba(255,255,255,.1);margin-top:50px}
-.small{color:var(--muted);font-size:14px}
-</style>
-</head>
-<body>
-<header><nav>
-<div class="logo">SOURABH <span>PAWAR</span></div>
-<div><a class="navlink" href="#projects">Projects</a><a class="navlink" href="#services">Chatbot services</a><a class="navlink" href="#skills">Skills</a><a class="navlink" href="#contact">Contact</a></div>
-</nav></header>
-<main>
-<section class="hero">
-<div>
-<span class="pill">AI Developer</span>
-<h1>Bookings and leads that <em>actually reach you.</em></h1>
-<p class="lead">I build website chatbots and desktop software. No login to maintain. No database to babysit. No server for the owner to worry about. Just answers, bookings, and leads sent straight to you.</p>
-<div class="btnrow">
-<a class="btn btn-primary" href="https://eclectic-clafoutis-57d439.netlify.app" target="_blank" rel="noopener">Try the live chatbot demo</a>
-<a class="btn btn-ghost" href="#projects">See all projects</a>
-</div>
-<div class="stats">
-<div class="stat"><b><span class="count" data-target="3">0</span></b><span>Projects built</span></div>
-<div class="stat"><b><span class="count" data-target="3">0</span></b><span>Business types in the chatbot demo</span></div>
-<div class="stat"><b>24/7</b><span>After hours lead capture</span></div>
-</div>
-<p class="small">Focus: dental, med spa, chiropractic, salon, and restaurant businesses first.</p>
-</div>
-<div class="chatbox">
-<div class="chathead"><strong><span class="dot"></span>Chatbot for Businesses demo chat</strong><span class="small">Try it</span></div>
-<p class="small">This is a small preview. The full demo, with bookings and an owner inbox, is linked above.</p>
-<div class="msgs" id="msgs"><div class="msg bot">Hi, I am Chatbot for Businesses. I can answer questions, book an appointment, or take a callback request after hours. What would you like to try?</div></div>
-<div>
-<button class="chipbtn" onclick="ask('What do you build?')">What do you build?</button>
-<button class="chipbtn" onclick="ask('Book an appointment')">Book an appointment</button>
-<button class="chipbtn" onclick="ask('What happens after hours?')">What happens after hours?</button>
-</div>
-</div>
-</section>
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sourabh Pawar Data Analyst Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-<section id="projects">
-<h2>Projects</h2>
-<p class="lead">Click any card for details. Use the filters to focus on one kind of work.</p>
-<div class="filters">
-<button class="filter active" onclick="setFilter('all',this)">All</button>
-<button class="filter" onclick="setFilter('chatbot',this)">AI chatbots</button>
-<button class="filter" onclick="setFilter('desktop',this)">Desktop software</button>
-</div>
-<div class="grid" id="grid"></div>
-<p class="small">Note: The chatbot demo businesses are fictional portfolio demos, built to show the product. They are not real clients.</p>
-</section>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
 
-<section id="services">
-<h2>Chatbot services</h2>
-<p class="lead">One reusable chatbot engine, set up with your real services, prices, hours, and phone number.</p>
-<div class="pricegrid">
-<div class="price"><h3>Starter</h3><b>$149</b><p>FAQ answers plus booking, for one website. Up to 10 questions.</p><p class="meta">Delivery: 5 days. 1 revision.</p></div>
-<div class="price featured"><h3>Standard ⭐ Most popular</h3><b>$299</b><p>Everything in Starter, plus WhatsApp and email lead delivery, after hours callbacks, urgent requests flagged first, and an unanswered question log.</p><p class="meta">Delivery: 7 days. 2 revisions.</p></div>
-<div class="price"><h3>Premium</h3><b>$499</b><p>Everything in Standard, plus a second location or website, or booking link integration.</p><p class="meta">Delivery: 10 days. 3 revisions.</p></div>
-</div>
-<h2>How it works</h2>
-<div class="steps">
-<div class="step"><b>1. Send your details</b><p>Services, prices, hours, closed days, and phone number.</p></div>
-<div class="step"><b>2. I build your chatbot</b><p>Built from your real details only. It never guesses a price.</p></div>
-<div class="step"><b>3. Paste one snippet</b><p>Add it to your website. No login, database, or server to maintain.</p></div>
-</div>
-</section>
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Sourabh Pawar<br />
+						Data Analyst Portfolio</h1>
+						<p>Aspiring data analyst skilled in SQL, Excel, Tableau, and Power BI. I create data-driven insights and interactive dashboards to help businesses make informed decisions.
+							 <a href="https://github.com/Sabh04">@Sabh04</a> 
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
 
-<section id="skills">
-<h2>Skills</h2>
-<div class="skills">
-<span class="skill">Chatbot Development</span><span class="skill">AI Chatbot</span><span class="skill">Lead Generation</span><span class="skill">JavaScript</span><span class="skill">HTML</span><span class="skill">Python</span><span class="skill">tkinter</span><span class="skill">PyMuPDF</span><span class="skill">SQLite</span><span class="skill">Booking Automation</span>
-</div>
-</section>
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Sourabh Pawar Analyst</a>
+					</header>
 
-<section id="contact">
-<h2>Contact</h2>
-<p class="lead">Start with the live demo, then message me with your business details.</p>
-<div class="btnrow">
-<a class="btn btn-primary" href="https://eclectic-clafoutis-57d439.netlify.app" target="_blank" rel="noopener">Try the live demo</a>
-<a class="btn btn-ghost" href="https://github.com/Sabh04" target="_blank" rel="noopener">GitHub: Sabh04</a>
-</div>
-<p class="small">I have left phone and email off this preview version. Tell me if you want them added before this goes live.</p>
-</section>
-</main>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Projects</a></li>
+							
+						</ul>
+						<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/sspawar" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+									<li><a href="https://github.com/Sabh04" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
 
-<div class="modalbg" id="modalbg" onclick="if(event.target===this) closeModal()">
-<div class="modal"><button class="closebtn" onclick="closeModal()">Close</button><div id="modalcontent"></div></div>
-</div>
+				<!-- Main -->
+					<div id="main">
 
-<footer>
-<p>Sourabh Pawar | AI Developer</p>
-<p class="small">Built with JavaScript, HTML, and Python. Chatbot demo: Chatbot for Businesses.</p>
-</footer>
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									
+									<h2><a href="https://github.com/Sabh04/sql-data-cleaning-layoffs">SQL Data Cleaning: Company Layoffs Dataset</a></h2>
+									<p>Cleaned and standardized a raw dataset of global company layoffs using SQL. 
+										Handled duplicates, missing values, inconsistent formatting (e.g., industries, locations, dates), 
+										and prepared reliable data on total/percent laid off, funding, and timelines for downstream analysis and reporting.</p>
+								</header>
+								<a href="https://github.com/Sabh04/sql-data-cleaning-layoffs" class="image main"><img src="images/Sql.jpg" alt="" /></a>
+								<ul class="actions special">
+									<li><a href="https://github.com/Sabh04/sql-data-cleaning-layoffs" class="button large">View Project</a></li>
+								</ul>
+							</article>
 
-<script>
-const projects=[
-{cat:'chatbot',tag:'AI chatbot',title:'Chatbot for Businesses',short:'A website chatbot that sends bookings to the owner, not just into the chat.',body:'<p>One reusable engine, set up by config only, for dental, salon, and restaurant businesses.</p><ul><li>Answers from owner approved prices only, never guesses</li><li>Booking checked against real hours and closed days</li><li>After hours callback capture</li><li>Urgent requests flagged first</li><li>Every lead sent by WhatsApp and email, plus copy and CSV</li><li>Unanswered question log for the owner</li></ul><p><a href="https://eclectic-clafoutis-57d439.netlify.app" target="_blank" rel="noopener">Open the live demo</a></p><p class="small">Demo businesses are fictional portfolio examples.</p>',tech:'JavaScript, HTML'},
-{cat:'desktop',tag:'Desktop software',title:'Samarth Realty Desk',short:'A Windows desktop app for a real estate office on one shared PC.',body:'<p>Built for a real estate office, with a branded maroon and gold theme.</p><ul><li>PIN login per staff member, with owner and staff roles</li><li>Shared leads and properties database</li><li>Follow up reminders and dashboard</li><li>WhatsApp follow up links</li><li>Full activity log, with who did what and when</li><li>Closed deals tracking for leads and sold properties</li></ul><p class="small">39 of 39 tests plus a GUI smoke test passed.</p>',tech:'Python, tkinter, SQLite'},
-{cat:'desktop',tag:'Desktop software',title:'LogoRemover',short:'A desktop tool that batch cleans logos and headers from PDF files.',body:'<p>Built for batch PDF cleaning, with safety first.</p><ul><li>Originals are never changed in place</li><li>Cleaned copies go to a separate folder</li><li>Any file that would lose other text is reverted to the original</li><li>Simple folder picker, progress bar, and log</li></ul><p class="small">16 of 16 unit tests passed. Windows and Mac builds.</p>',tech:'Python, PyMuPDF'},
-];
-function render(filter){
-  const grid=document.getElementById('grid');grid.innerHTML='';
-  projects.filter(p=>filter==='all'||p.cat===filter).forEach(p=>{
-    const d=document.createElement('div');d.className='card';
-    d.innerHTML='<div class="tag">'+p.tag+'</div><h3>'+p.title+'</h3><p>'+p.short+'</p><p class="meta">'+p.tech+' | Click for details</p>';
-    d.onclick=()=>openModal(p);grid.appendChild(d);
-  });
-}
-function setFilter(f,btn){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(f);}
-function openModal(p){document.getElementById('modalcontent').innerHTML='<div class="tag">'+p.tag+'</div><h2 style="margin-top:8px">'+p.title+'</h2>'+p.body+'<p class="meta">Tech: '+p.tech+'</p>';document.getElementById('modalbg').classList.add('open');}
-function closeModal(){document.getElementById('modalbg').classList.remove('open');}
-function ask(q){
-  const msgs=document.getElementById('msgs');
-  msgs.innerHTML+='<div class="msg user">'+q+'</div>';
-  let a='';
-  if(q.includes('build')) a='I build website chatbots for businesses, plus desktop software. The chatbot answers questions, books appointments, and sends every lead to the owner by WhatsApp and email.';
-  else if(q.includes('Book')) a='In the full demo, I would check your hours and closed days, then ask for a date, time, and phone number. If the day is closed, I would offer the next open day instead of taking a bad booking.';
-  else a='After hours, I do not pretend the business is open. I take a callback request with a name and phone number, flag urgent requests first, and send it to the owner right away.';
-  setTimeout(()=>{msgs.innerHTML+='<div class="msg bot">'+a+'</div>';msgs.scrollTop=msgs.scrollHeight;},400);
-}
-render('all');
-document.querySelectorAll('.count').forEach(el=>{
-  const target=parseInt(el.dataset.target);let n=0;
-  const t=setInterval(()=>{n++;el.textContent=n;if(n>=target)clearInterval(t);},120);
-});
-</script>
-</body>
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										
+										<h2><a href="https://github.com/Sabh04/Excel-data-cleaning-dashboard">Data Cleaning in Excel<br />
+										</a></h2>
+									</header>
+									<a href="https://github.com/Sabh04/Excel-data-cleaning-dashboard" class="image fit"><img src="images/Excel.png" alt="" /></a>
+									<p>This project analyzes customer data to understand which characteristics most strongly influence bike purchases. 
+										Using Excel, I cleaned the dataset, performed exploratory analysis, and built an interactive dashboard that allows 
+										users to quickly explore purchasing patterns across different customer segments.</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/Sabh04/Excel-data-cleaning-dashboard" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										
+										<h2><a href="https://public.tableau.com/app/profile/sourabh.pawar8438/viz/Tableaudashboardproject_17724061289660/Dashboard1">Tableau Dashboard Project<br />
+										</a></h2>
+									</header>
+									<a href="https://public.tableau.com/app/profile/sourabh.pawar8438/viz/Tableaudashboardproject_17724061289660/Dashboard1" class="image fit"><img src="images/Tableau.jpg" alt="" /></a>
+									<p>This project explores Seattle’s Airbnb market using real data on listings, reviews, and calendar availability. 
+										An interactive Tableau dashboard visualizes insights on pricing, occupancy, reviews, and host performance, 
+										making it ideal for data visualization portfolios, market analysis, or tourism studies.</p>
+									<ul class="actions special">
+										<li><a href="https://public.tableau.com/app/profile/sourabh.pawar8438/viz/Tableaudashboardproject_17724061289660/Dashboard1" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										
+										<h2><a href="https://github.com/Sabh04/Data-Professionals-Powerbi">PowerBi Dashboard Analysis<br />
+										</a></h2>
+									</header>
+									<a href="https://github.com/Sabh04/Data-Professionals-Powerbi" class="image fit"><img src="images/Powerbi.png" alt="" /></a>
+									<p>This project analyzes a survey of 630+ data professionals to explore job satisfaction, salaries, career switches, and key factors like work-life balance and programming preferences. 
+										The interactive Power BI dashboard allows users to explore trends across roles, industries, and demographics, making it ideal for HR analytics, career insights, or data visualization portfolios.</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/Sabh04/Data-Professionals-Powerbi" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										
+										<h2><a href="aa">Work In Progress<br />
+										</a></h2>
+									</header>
+									<a href="aa" class="image fit"><img src="images/Wip.jpg" alt="" /></a>
+									<p>This Section is for the project i am currently working on</p>
+									<ul class="actions special">
+										<li><a href="aa" class="button">View Project</a></li>
+									</ul>
+								</article>
+
+
+								
+							
+
+			
+
+				
+
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p> Orlando, Florida 32817</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(321) 444-9409</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">Pawarsourabh0422@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									
+									<li><a href="https://www.linkedin.com/in/sspawar" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+									<li><a href="https://github.com/Sabh04" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
 </html>
